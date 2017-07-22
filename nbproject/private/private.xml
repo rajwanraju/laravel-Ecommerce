@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/resources/views/frontEnd/category/categoryContent.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Providers/AppServiceProvider.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Category.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Http/Controllers/ProductController.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/resources/views/admin/category/editCategory.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Product.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Http/Controllers/WelcomeController.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/resources/views/frontEnd/product/productContent.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/resources/views/admin/category/manageCategory.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/Manufactur.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/Ecommerce_Project/resources/views/frontEnd/home/homeContent.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
