@@ -12,7 +12,9 @@ class WelcomeController extends Controller {
     public function index() {
 
 
-        $publishedProducts = Product::Paginate(2);
+        $publishedProducts = Product::where('publicationStatus', 1)
+                                      ->Paginate(4);
+                                      
 
 
         return view('frontEnd.home.homeContent', ['publishedProducts' => $publishedProducts]);
@@ -28,12 +30,26 @@ class WelcomeController extends Controller {
         return view('frontEnd.category.categoryContent', ['publishedCategoryProducts' => $publishedCategoryProducts]);
     }
 
-    public function search_product(Requests $request) {
 
-        $search = $request->search_product;
-        $Products = DB::table('products')->where('productName', 'like', "$search")->paginate(10);
-        return view('frontEnd.home.homeContent', compact('Products'));
-    }
+
+
+     public function search(Request $request){
+
+ //$search = \Request::get('search');
+
+
+
+
+    $searchProducts = Product::where('productName','like','%'.$request->search_product.'%')
+                       ->paginate(4);
+ 
+    return view('frontEnd.search',compact('searchProducts'));
+
+}
+
+
+
+
 
     public function offers() {
 

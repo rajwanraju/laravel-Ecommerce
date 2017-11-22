@@ -23,9 +23,9 @@
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $user->id }}</td>
-            <td>{{ $user->name }}</td>
+            <td>{{ $user->firstName ." ". $user->lastName }}</td>
             <td>{{ $user->address }}</td>
-            <td>{{ $user->email }}</td>
+            <td>{{ $user->emailAddress }}</td>
             <td>
                 <a href="" class="btn btn-success">
                     <span class="glyphicon glyphicon-edit"></span>

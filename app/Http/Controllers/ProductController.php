@@ -7,6 +7,7 @@ use App\Category;
 use App\Manufactur;
 use App\Product;
 use DB;
+use Storage;
 
 class ProductController extends Controller {
 
@@ -74,7 +75,7 @@ class ProductController extends Controller {
 
     public function editProduct($id) {
 
-        $categories = Category::where('publicationStatus', 1)->get();
+        $categories = Category::all();
         $manufacturs = Manufactur::where('publicationStatus', 1)->get();
 
         $productById = Product::where('id', $id)->first();
@@ -85,12 +86,71 @@ class ProductController extends Controller {
                         ->with('categories', $categories)
                         ->with('manufacturs', $manufacturs);
     }
+/*
+    public function updateProduct(Request $request,$id) {
+      
+$product = Product::find($id);
+
+dd($product);
+
+  $this->validate($request, [
+            'productName' => 'required',
+            'productPrice' => 'required',
+            'productImage' => 'required',
+        ]);
+
+
+if($request->hasFile('productImage')){
+
+        $productImage = $request->file('productImage') ;
+        $filename = $productImage->getClientOriginalName();
+        $uploadPath = 'public/productImage/';
+        $productImage->move($uploadPath, $filename);
+        $imageUrl = $uploadPath . $filename;
+        $oldimage =$product->productImage;
+
+        $product->productImage=$imageUrl;
+         Storage::delete($oldimage);
+
+}
+        $product->productName = $request->productName;
+        $product->categoryid = $request->categoryid;
+        $product->manufacturid = $request->menufacturid;
+        $product->productPrice = $request->productPrice;
+        $product->productQuentity = $request->productQuentity;
+        $product->productShortDescription = $request->productShortDescription;
+        $product->productLongDescription = $request->productLongDescription;
+       $product->publicationStatus = $request->publicationStatus;
+        $product->save();
+
+
+    }
+
+*/
+
 
     public function updateProduct(Request $request) {
-        $imageUrl = $this->imageExistStatus($request);
-        echo $imageUrl;
-        exit();
+       $imageUrl = $this->imageExistStatus($request);
+          
+     $product = Product::find($request->productId);
+  
+         $product->productImage =   $imageUrl;
+         $product->productName = $request->productName;
+        $product->categoryid = $request->categoryid;
+        $product->manufacturid = $request->menufacturid;
+        $product->productPrice = $request->productPrice;
+        $product->productQuentity = $request->productQuentity;
+        $product->productShortDescription = $request->productShortDescription;
+        $product->productLongDescription = $request->productLongDescription;
+       $product->publicationStatus = $request->publicationStatus;
+        $product->save();
+           return redirect('/product/manage')->with('message', 'Product update  successfully');
     }
+
+
+
+
+
 
     private function imageExistStatus($request) {
         $productById = Product::where('id', $request->productId)->first();

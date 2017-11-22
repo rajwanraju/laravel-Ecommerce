@@ -38,7 +38,7 @@ Route::get('/checkout/my-home', 'CheckoutController@customerHome');
 
 
 
-Route::post('/search','WelcomeController@search_product');
+Route::post('/search','WelcomeController@search');
 
 
 /*cart*/
@@ -76,9 +76,8 @@ Route::post('/product/save', 'ProductController@storeProduct');
 Route::get('/product/manage', 'ProductController@manageProduct');
 Route::get('/product/view/{id}', 'ProductController@viewProduct');
 Route::get('/product/edit/{id}', 'ProductController@editProduct');
-Route::post('/product/update', 'ProductController@updateProduct');
+Route::post('/product/update', 'ProductController@updateProduct')->name('product.update');
 Route::get('/product/delete/{id}', 'ProductController@deleteProduct');
-
 
 
 

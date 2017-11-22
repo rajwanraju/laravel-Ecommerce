@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <th>Product Image</th>
-<th><img src="{{ asset($product->productImage)}}" alt="{{$product->productName}}"</th>
+<th><img src="{{ asset($product->productImage)}}" width="320px" height="240px" alt="{{$product->productName}}"</th>
 </tr>
 <tr>
 <th>Publication Status</th>
