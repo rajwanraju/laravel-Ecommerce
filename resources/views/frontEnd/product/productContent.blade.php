@@ -5,11 +5,7 @@
 @endsection
 
 @section('mainContent')
-<div class="page-head">
-    <div class="container">
-        <h3>Single</h3>
-    </div>
-</div>
+
 <!-- //banner -->
 <!-- single -->
 <div class="single">
@@ -80,7 +76,7 @@
                 </div>
                 <hr/>
                 <div class="occasion-cart">
-                    <button type="submit" class="item_add hvr-outline-out button2">Add to cart</button>
+                    <button type="submit" class="btn btn-warning item_add hvr-outline-out button2">Add to cart</button>
                 </div>
             {!! Form::close() !!}
         </div>

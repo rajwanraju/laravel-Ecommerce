@@ -78,6 +78,8 @@ Route::get('/product/view/{id}', 'ProductController@viewProduct');
 Route::get('/product/edit/{id}', 'ProductController@editProduct');
 Route::post('/product/update', 'ProductController@updateProduct')->name('product.update');
 Route::get('/product/delete/{id}', 'ProductController@deleteProduct');
+Route::get('/product/image/add/{id}', 'ProductController@ProductImageAdd');
+Route::post('/product/image/save', 'ProductController@ProductImageStore');
 
 
 

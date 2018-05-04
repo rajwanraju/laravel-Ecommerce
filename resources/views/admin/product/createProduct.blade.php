@@ -8,7 +8,7 @@
 <div class="well">
 <!--<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">-->
 
-	
+
 {!!Form::open(['url'=>'product/save','method'=>'POST','class'=>'form-horizontal','enctype'=>'multipart/form-data'])!!}
 	<div class="form-group">
 <label for="" class="col-sm-2 control-label">Product Name</label>
@@ -28,9 +28,9 @@
  <div class="col-sm-10">
   <select class="form-control" name="categoryid">
     <option>Select Category Name</option>
-     @foreach($categories as $category) 
+     @foreach($categories as $category)
     <option value="{{$category->id}}">{{$category->categoryName}}</option>
-  
+
    @endforeach
   </select>
 </div>
@@ -40,11 +40,11 @@
 <div class="form-group">
   <label for="sel1" class="col-sm-2 control-label" >Manufactur Name</label>
 <div class="col-sm-10">
-  <select class="form-control" name="menufacturid">
+  <select class="form-control" name="manufacturid">
     <option>Select Manufactur Name</option>
-     @foreach($manufacturs as $manufactur) 
+     @foreach($manufacturs as $manufactur)
     <option value="{{$manufactur->id}}">{{$manufactur->manufacturName}}</option>
-  
+
    @endforeach
   </select>
 </div>
@@ -105,9 +105,9 @@
   <div class="form-group">
 <label for="" class="col-sm-2 control-label">Product Image</label>
 <div class="col-sm-10">
-<input type="file" name="productImage" accept="image/*">
+<input type="file" name="productImage[]" multiple  accept="image/*">
 </div>
-</div> 
+</div>
 
 
 
@@ -131,7 +131,7 @@
 </div>
 {!!Form::close()!!}
 
-	
+
 </div>
 </div>
 </div>
